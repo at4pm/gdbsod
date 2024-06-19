@@ -60,8 +60,8 @@ class $modify(PlayLayer) {
     bool init(GJGameLevel *p0, bool p1, bool p2) {
         if (!PlayLayer::init(p0,p1,p2)) return false;
         m_fields->counterLabel = CCLabelBMFont::create(fmt::format("Lives: {}", lives).c_str(), "bigFont.fnt");
-        m_fields->counterLabel->setPosition({36, 0});
-        m_fields->counterLabel->setScale(0.5F);
+        m_fields->counterLabel->setPosition({29, 10});
+        m_fields->counterLabel->setScale(0.5f);
         m_fields->counterLabel->setOpacity(255 / 2);
         m_uiLayer->addChild(m_fields->counterLabel);
         return true;
