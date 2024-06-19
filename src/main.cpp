@@ -5,7 +5,6 @@
 using namespace cocos2d;
 
 int lives = geode::Mod::get()->getSettingValue<int64_t>("lives");
-bool enabled = geode::Mod::get()->getSettingValue<bool>("enabled");
 
 void CallBsod(bool save) {
     if (save) {
@@ -27,9 +26,6 @@ void CallBsod(bool save) {
 
 class $modify(PlayLayer) {
     void startGame() {
-        if (!enabled) {
-            return PlayLayer::startGame();
-        }
         lives = geode::Mod::get()->getSettingValue<int64_t>("lives");
         if (m_fields->counterLabel != nullptr) {
                 m_fields->counterLabel->setString(fmt::format("Lives: {}", lives).c_str());
@@ -38,17 +34,11 @@ class $modify(PlayLayer) {
     }
     
     void levelComplete() {
-        if (!enabled) {
-            return PlayLayer::levelComplete();
-        }
         lives = geode::Mod::get()->getSettingValue<int64_t>("lives");
         PlayLayer::levelComplete();
     }
 
     void resetLevel() {
-        if (!enabled) {
-            return PlayLayer::resetLevel();
-        }
         if (lives == 0) {
             CallBsod(geode::Mod::get()->getSettingValue<bool>("saving"));
         } else {
@@ -67,9 +57,6 @@ class $modify(PlayLayer) {
     };
 
     bool init(GJGameLevel *p0, bool p1, bool p2) {
-        if (!enabled) {
-            return false;
-        }
         if (!PlayLayer::init(p0,p1,p2)) return false;
         m_fields->counterLabel = CCLabelBMFont::create(fmt::format("Lives: {}", lives).c_str(), "bigFont.fnt");
         m_fields->counterLabel->setPosition({29, 10});

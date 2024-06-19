@@ -26,12 +26,6 @@
 			"type": "bool",
 			"default": true,
 			"description": "Only real gamers have this off."
-		},
-		"enabled": {
-			"name": "Enabled",
-			"type": "bool",
-			"default": true,
-			"description": "To save you from restarting the game."
 		}
 	}
 }
