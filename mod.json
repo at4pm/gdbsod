@@ -1,0 +1,29 @@
+{
+	"geode": "3.0.0-beta.1",
+	"gd": {
+		"win": "2.206"
+	},
+	"id": "ata.bsod",
+	"name": "GDBSoD Port",
+	"version": "v1.0.0",
+	"developer": "ata",
+	"description": "A port of TobyAdd's Geometry Dash BSoD mod.",
+	"settings": {
+		"lives": {
+			"name": "Lives",
+			"type": "int",
+			"default": 5,
+			"min": 1,
+			"max": 15,
+			"control": {
+				"slider": true,
+				"slider-step": 1
+			}
+		},
+		"saving": {
+			"name": "Save before BSoD",
+			"type": "bool",
+			"default": true
+		}
+	}
+}
