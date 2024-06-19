@@ -1,3 +1,6 @@
-# Template Mod
+# GDBSoD
+funny geode bsod mod
 
-Edit about.md to change this
+## Options
+Lives: pretty self explanatory. change the amount of lives
+Save before BSoD: save your gd data before blue screening
