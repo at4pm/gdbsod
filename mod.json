@@ -18,12 +18,20 @@
 			"control": {
 				"slider": true,
 				"slider-step": 1
-			}
+			},
+			"description": "Sets how many lives you have before you blue screen."
 		},
 		"saving": {
 			"name": "Save before BSoD",
 			"type": "bool",
-			"default": true
+			"default": true,
+			"description": "Only real gamers have this off."
+		},
+		"enabled": {
+			"name": "Enabled",
+			"type": "bool",
+			"default": true,
+			"description": "To save you from restarting the game."
 		}
 	}
 }
